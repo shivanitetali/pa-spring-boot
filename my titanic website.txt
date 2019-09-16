@@ -32,14 +32,52 @@
 <div class="jumbotron text-center">
   <h1>TITANIC VISITORS CENTRE</h1>
   <p>What will you discover next?</p> 
-  <p></p>
-  <div class="container">
+  <img src="/images/titanic.img.jpg" class="img-fluid rectangle" alt="Titanic Visitors Centre">
+</div>
+<div id="demo" class="img-fluid carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/images/titanic.jpg" alt="Titanic">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/vicsqr.jpg" alt="Victoria Square">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/cityhallday.jpg" alt="CityHallDay">
+      </div>
+    <div class="carousel-item">
+      <img src="/images/cityhallnight.jpg" alt="CityHallNight">
+    </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+
+
+<div class="container">
   <div class="row">
     <div class="col-sm-4">
       
       <div class="btn-group">
   <button type="button" class="btn btn-primary">Popular Destinations</button>
-  <p></p>
   <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
     <span class="caret"></span>
   </button>
@@ -63,8 +101,8 @@
     <a class="dropdown-item" href="#">Pay</a>
       </div>
       </div>
-       </div>
       
+    </div>
         <div class="col-sm-4">
       <div class="btn-group">
   <button type="button" class="btn btn-primary">How to Reach</button>
@@ -75,60 +113,11 @@
     <a class="dropdown-item" href="#">Google Maps</a>
     <a class="dropdown-item" href="#">Contact us</a>
     <a class="dropdown-item" href="#">Transport</a>
-    
+      
+      
+      
     </div>
-  </div>
- </div>
-
-
   
-  
-  </style>
-</head>
-<body>
-
-<div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/images/titanic.jpg" alt="Titanic Belfast" width="1000" height="500">
-      <div class="carousel-caption">
-        <h3>TITANIC BELFAST</h3>
-        <p>Watch the History!</p>
-      </div>   
-    </div>
-    <div class="carousel-item">
-      <img src="/images/vicsqr.jpg" alt="Vctoria Square" width="1000" height="500">
-      <div class="carousel-caption">
-        <h3>VICTORIA SQUARE</h3>
-        <p>Eat, Shop, Watch, Play!</p>
-      </div>   
-    </div>
-    <div class="carousel-item">
-      <img src="/images/cityhallday.jpg" alt="City Hall" width="1000" height="500">
-      <div class="carousel-caption">
-        <h3>CITY HALL</h3>
-        <p>Watch the Beauty!</p>
-      </div>   
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
-
-  
-  </div>
-</div>
-   </div>
-
 
 </body>
 </html>
