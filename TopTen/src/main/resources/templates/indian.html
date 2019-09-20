@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <!-- Custom Styles  -->
+
+<title th:text = "${pageTitle}">Indian</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/international">International</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/indian">Indian</a>
+    </li>
+  </ul>
+</nav>
+<div class="jumbotron text-center" 
+	style="height:250px;
+	background:transparent url('/img/indian.png') no-repeat center center /cover">>
+
+<h1>Indian Music</h1>
+<h2 th:text="${numberOfTopTens}"></h2>
+<br />
+
+</div>
+
+
+<div class="container">
+
+<p>Top Ten Indian Music Albums</p>
+<table class = "table table-striped">
+	<thead>
+		<tr>
+			<th>Song</th>
+			<th>Artist</th>
+			<th>Album</th>
+			<th>Image</th>
+		</tr>
+	</thead>
+<tbody>
+	<tr th:each="topten:${toptens}">
+		<td th:text="${topten.song}">Indian</td>
+		<td th:text="${topten.artist}">Indian</td>
+		<td th:text="${topten.album}">Indian</td>
+		<td><img src= "../static/img/indian.png" th:src="@{/img/} + ${topten.image}"></img></td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+</body>
+</html>
