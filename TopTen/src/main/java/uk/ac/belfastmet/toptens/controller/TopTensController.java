@@ -78,14 +78,18 @@ public class TopTensController
 
 	@GetMapping("/international")
 	public String internationalPage(Model model)
-	{			TopTenService toptenService = new TopTenService();
-	model.addAttribute("pageTitle", "International TopTens");
-	model.addAttribute("toptens", toptenService.getInternationalTopTens());
-
-
-	return "international";
+	{			
+		TopTenService toptenService = new TopTenService();
+		model.addAttribute("pageTitle", "International TopTens");
+		model.addAttribute("toptens", toptenService.getInternationalTopTens());
+		return "international";
 	}
 
+	/**
+	 * This method will give details on indian music
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/indian")
 	public String indianPage(Model model)
 	{

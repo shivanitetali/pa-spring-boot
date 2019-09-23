@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <!-- Custom Styles  -->
 
-<title>This is a Home Page</title>
+<title>Completed Page</title>
 </head>
 
 <body>
@@ -22,27 +22,51 @@
       <a class="nav-link" href="/">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/international">International</a>
+      <a class="nav-link" href="/completed">Completed</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/indian">Indian</a>
-    </li>
+        
   </ul>
 </nav>
 <div class="jumbotron text-center"
 	style="height:250px;
-	background:transparent url('/img/music.png') no-repeat center center /cover">
+	background:transparent url('/img/completed.png') no-repeat center center /cover">
+	
 
-<h1>Home Page</h1>
-<h2></h2>
+
+<h1></h1>
+<h2 th:text="${message}"></h2>
+<h2 th:text="${numberOfToDo}"></h2>
+
 <br />
-
 </div>
 
 
 <div class="container">
 
-<p>This site will contain information about International and Indian TopTen Music Albums</p>
+<p>Completed Tasks:</p>
+
+<table class = "table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Status</th>
+			<th>CompletionDate</th>
+			<th>Priority</th>
+		</tr>
+	</thead>
+<tbody>
+	<tr th:each="todo1:${todo1}">
+		<td th:text="${todo1.name}">Task</td>
+		<td th:text="${todo1.description}">Task</td>
+		<td th:text="${todo1.status}">Task</td>
+		<td th:text="${todo1.completiondate}">Task</td>
+		<td th:text="${todo1.priority}">Task</td>
+		
+</tbody>
+</table>
+
+
 
 </div>
 

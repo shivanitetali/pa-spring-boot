@@ -42,7 +42,6 @@ public class TopTenService
 			this.indianTopTens.add(new TopTen("Chogada","Loveyatri","Indian", "ind9.png"));
 			this.indianTopTens.add(new TopTen("Kamariya","Aastha Gill","Indian", "ind10.png"));
 			
-			
 			return this.indianTopTens;
 		}
 }

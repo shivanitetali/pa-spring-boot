@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <!-- Custom Styles  -->
 
-<title th:text = "${pageTitle}">Disney Dwarfs were here</title>
+<title th:text = "${pageTitle}">International</title>
 </head>
 
 <body>
@@ -57,7 +57,7 @@
 		<td th:text="${topten.song}">int</td>
 		<td th:text="${topten.artist}">int</td>
 		<td th:text="${topten.album}">int</td>
-		<td><img src= "../static/img/int.png" th:src="@{/img/} + ${topten.image}"></img></td>
+		<td><img src= "img/int.png" th:src="@{/img/} + ${topten.image}"></img></td>
 	</tr>
 </tbody>
 </table>
