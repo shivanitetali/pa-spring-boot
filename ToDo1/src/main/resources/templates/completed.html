@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <!-- Custom Styles  -->
 
-<title>Completed Page</title>
+<title th:text = "${pageTitle}">Completed</title>
 </head>
 
 <body>
@@ -28,14 +28,14 @@
   </ul>
 </nav>
 <div class="jumbotron text-center"
-	style="height:250px;
+	style="height:300px;
 	background:transparent url('/img/completed.png') no-repeat center center /cover">
 	
 
 
 <h1></h1>
 <h2 th:text="${message}"></h2>
-<h2 th:text="${numberOfToDo}"></h2>
+<h2 th:text="${numberOfToDo1}"></h2>
 
 <br />
 </div>
