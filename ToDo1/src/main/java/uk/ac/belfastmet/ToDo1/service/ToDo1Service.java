@@ -1,11 +1,13 @@
 package uk.ac.belfastmet.ToDo1.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import jdk.internal.org.jline.utils.ShutdownHooks.Task;
 import uk.ac.belfastmet.ToDo1.domain.ToDo1;
@@ -55,9 +57,13 @@ public class ToDo1Service
 	
 	public void getNumberOfTask()
 	{
-		//Iterable<Task> task = taskRepository.findAll();
-		//Iterator<Task> iterator = task.iterator();
-		//while (iterator.)
-		logger.info("# of tasks{}", taskRepository.count());		
+		Iterable <ToDo1> task = taskRepository.findAll();
+		Iterator <ToDo1> iterator = task.iterator();
+		while (iterator.hasNext())
+		{
+			logger.info("{}", iterator.next().toString());
+			logger.info("# of tasks {}", taskRepository.count());	
+		}
+			
 	}
 }
