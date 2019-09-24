@@ -51,7 +51,7 @@ public class ToDo1Controller
 		
 		ToDo1Service todo1Service = new ToDo1Service();
 		model.addAttribute("pageTitle", "Completed");
-		model.addAttribute("todo", todo1Service.getCompletedToDo1());
+		model.addAttribute("todo1", todo1Service.getCompletedToDo1());
 		
 		model.addAttribute("message", "Completed Tasks");
 		
