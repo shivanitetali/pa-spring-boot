@@ -1,19 +1,22 @@
 package uk.ac.belfastmet.ToDo1.domain;
 
 public class ToDo1 
+
 {
+	//these will be the variables columns in the table 
 	private String name;
 	private String description;
 	private String status;
 	private String completiondate;
 	private String priority;
 	
+	
+	//contructors
 	public ToDo1() 
 	{
 		super();
 	}
-	
-	
+		
 	public ToDo1(String name, String description, String status, String completiondate, String priority) 
 	{
 		super();
@@ -24,43 +27,51 @@ public class ToDo1
 		this.priority = priority;
 	}
 
-
 	public String getName() 
 	{
 		return name;
 	}
+	
 	public void setName(String name) 
 	{
 		this.name = name;
 	}
+	
 	public String getDescription() 
 	{
 		return description;
 	}
+	
 	public void setDescription(String description)
 	{
 		this.description = description;
 	}
+	
 	public String getStatus() 
 	{
 		return status;
 	}
+	
 	public void setStatus(String status) 
 	{
 		this.status = status;
 	}
+	
 	public String getCompletiondate()
 	{
 		return completiondate;
 	}
+	
 	public void setCompletiondate(String completiondate)
 	{
 		this.completiondate = completiondate;
 	}
+	
 	public String getPriority()
 	{
 		return priority;
 	}
+	
 	public void setPriority(String priority)
 	{
 		this.priority = priority;

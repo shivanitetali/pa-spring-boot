@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
@@ -30,49 +31,16 @@
         
   </ul>
 </nav>
-<div class="jumbotron text-center"
-	style="height:300px;
-	background:transparent url('/img/completed.png') no-repeat center center /cover">
-	
-
-
-<h1></h1>
-<h2 th:text="${message}"></h2>
-<h2 th:text="${numberOfToDo1}"></h2>
-
-<br />
-</div>
 
 
 <div class="container">
-
-<p>Completed Tasks:</p>
-
-<!-- contents inside the table -->
-<table class = "table table-striped">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Status</th>
-			<th>CompletionDate</th>
-			<th>Priority</th>
-		</tr>
-	</thead>
-<tbody>
-	<tr th:each="todo1:${todo1}">
-		<td th:text="${todo1.name}">Task</td>
-		<td th:text="${todo1.description}">Task</td>
-		<td th:text="${todo1.status}">Task</td>
-		<td th:text="${todo1.completiondate}">Task</td>
-		<td th:text="${todo1.priority}">Task</td>
-		
-</tbody>
-</table>
-
-
-
+  <h2>Button Tags</h2>
+  <a href="#" class="btn btn-info" role="button">Link Button</a>
+  <button type="button" class="btn btn-info">Button</button>
+  <input type="button" class="btn btn-info" value="Input Button">
+  <input type="submit" class="btn btn-info" value="Submit Button">
 </div>
+
 
 </body>
 </html>
