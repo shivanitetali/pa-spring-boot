@@ -1,17 +1,44 @@
 package uk.ac.belfastmet.ToDo1.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+//@Entity is JPA object(Java Persistent Annotations)
+@Entity 
+//task is the table name created in mySQL
+@Table(name = "task")
+
 public class ToDo1 
 
 {
-	//these will be the variables columns in the table 
+	//variables in the task table
+	private long id;
+	private String user;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public long getId()
+	{
+		return id;
+	}
+	
+	public void setId(long id)
+	{
+		this.id = id;
+	}
+			
+	
+	//these will be the variables columns in the table on the website
 	private String name;
 	private String description;
 	private String status;
 	private String completiondate;
 	private String priority;
 	
-	
-	//contructors
+	//constructors
 	public ToDo1() 
 	{
 		super();
@@ -26,7 +53,7 @@ public class ToDo1
 		this.completiondate = completiondate;
 		this.priority = priority;
 	}
-
+	@Column(name = "name" )
 	public String getName() 
 	{
 		return name;
@@ -37,6 +64,7 @@ public class ToDo1
 		this.name = name;
 	}
 	
+	@Column(name = "description" )
 	public String getDescription() 
 	{
 		return description;
@@ -47,6 +75,18 @@ public class ToDo1
 		this.description = description;
 	}
 	
+	@Column(name = "user" )
+	public String getUser() 
+	{
+		return user;
+	}
+	
+	public void setUser(String user)
+	{
+		this.user = user;
+	}
+	
+	@Column(name = "status" )
 	public String getStatus() 
 	{
 		return status;
@@ -57,6 +97,7 @@ public class ToDo1
 		this.status = status;
 	}
 	
+	@Column(name = "completiondate" )
 	public String getCompletiondate()
 	{
 		return completiondate;
@@ -67,6 +108,7 @@ public class ToDo1
 		this.completiondate = completiondate;
 	}
 	
+	@Column(name = "priority" )
 	public String getPriority()
 	{
 		return priority;
