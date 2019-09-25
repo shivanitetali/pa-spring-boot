@@ -25,8 +25,7 @@ public class ToDo1Service
 	
 	private ArrayList<ToDo1> homeToDo1;
 	private ArrayList<ToDo1> completedToDo1;
-	private ArrayList<ToDo1> todoList;
-		
+			
 	/**
 	 * @return to-do list in home.html page
 	 */
@@ -59,10 +58,28 @@ public class ToDo1Service
 	}
 	
 	/**
-	 * connects to todo database and shows up the iterables list from the task table 
+	 * shows the iterable list and logger page info on the console
 	 */
 	
-	//public void getNumberOfTask()
+//	public void getNumberOfTask()
+//	{
+//		logger.info("# of tasks {}", taskRepository.count());
+//		
+//		Iterable <ToDo1> todo1Tasks = taskRepository.findAll();
+//		Iterator <ToDo1> iterator = todo1Tasks.iterator();
+//		ArrayList<ToDo1> todoList = new ArrayList<ToDo1>();
+//		while (iterator.hasNext())
+//		{
+//			//gives the info in the console of the iterable list from the task table in mysql
+//			//logger.info("{}", iterator.next().toString());
+//			//logger.info("# of tasks {}", taskRepository.count());
+//			todoList.add(iterator.next());
+//		}
+//	}
+	
+	/**
+	 * connects to todo database and shows up the iterables list from the task table 
+	 */
 	public ArrayList<ToDo1> getDBTasks()
 	{
 		logger.info("# of tasks {}", taskRepository.count());
@@ -73,17 +90,13 @@ public class ToDo1Service
 		while (iterator.hasNext())
 		{
 			//gives the info in the console of the iterable list from the task table in mysql
-			logger.info("{}", iterator.next().toString());
+			//logger.info("{}", iterator.next().toString());
 			//logger.info("# of tasks {}", taskRepository.count());
 			todoList.add(iterator.next());
+						
 		}
-			
+					
 		return todoList;
-		
-		
 	}
-	
-	
-	
-	
+		
 }

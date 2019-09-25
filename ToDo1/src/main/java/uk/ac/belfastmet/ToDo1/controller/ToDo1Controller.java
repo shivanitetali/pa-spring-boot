@@ -48,6 +48,7 @@ public class ToDo1Controller
 		model.addAttribute("message", "To-Do Tasks");
 		
 		//todo1Service.getNumberOfTask();
+		todo1Service.getDBTasks();
 		
 		return "home";
 	}
@@ -63,39 +64,18 @@ public class ToDo1Controller
 		logger.info(todo1.toString());
 		
 		//@Autowired replaces the below line	
-		//ToDo1Service todo1Service = new ToDo1Service();
+		ToDo1Service todo1Service = new ToDo1Service();
 		model.addAttribute("pageTitle", "Completed");
 		model.addAttribute("todo1", todo1Service.getCompletedToDo1());
 		
 		//will give the message typed here on the website
 		model.addAttribute("message", "Completed Tasks");
 		
+		todo1Service.getDBTasks();
+		
 		return "completed";
 	}
 	
-	/**
-	 * todo constructor accepts following parameteres
-	 * @param model created for dbtasks page
-	 * @return home.html
-	 */	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String dbtasksPage(Model model)
-	{
-		logger.info("Getting DBTasks Page");
-		logger.info(todo1.toString());
-		
-		//@Autowired replaces the below line			
-		//ToDo1Service todo1Service = new ToDo1Service();
-		model.addAttribute("pageTitle", "DBTasks");
-		model.addAttribute("todo1", todo1Service.getDBTasks());
-			
-		//message typed here will be on the website
-		model.addAttribute("message", "DBTasks");
-		
-		todo1Service.getDBTasks();
-	
-		return "dbtasks";
-	}
 	
 }
 
