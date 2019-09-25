@@ -47,7 +47,7 @@ public class ToDo1Controller
 		//message typed here will be on the website
 		model.addAttribute("message", "To-Do Tasks");
 		
-		//todo1Service.getNumberOfTask();
+		todo1Service.getNumberOfTask();
 		todo1Service.getDBTasks();
 		
 		return "home";
@@ -71,7 +71,7 @@ public class ToDo1Controller
 		//will give the message typed here on the website
 		model.addAttribute("message", "Completed Tasks");
 		
-		todo1Service.getDBTasks();
+		
 		
 		return "completed";
 	}
