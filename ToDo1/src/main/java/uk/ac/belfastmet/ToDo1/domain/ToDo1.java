@@ -50,14 +50,18 @@ public class ToDo1
 		super();
 	}
 	
-	public ToDo1(String name, String description, String status, String completiondate, String priority) 
+	//public ToDo1(String name, String description, String status, String completiondate, String priority) 
+	public ToDo1(String name, String description, String user, String priority, String completiondate,String status) 
 	{
 		super();
 		this.name = name;
 		this.description = description;
-		this.status = status;
-		this.completiondate = completiondate;
+		this.description = user;
 		this.priority = priority;
+		this.completiondate = completiondate;
+		this.status = status;
+		
+		
 	}
 	
 	//getters and setters for the column names in the task table in mysql
@@ -94,16 +98,17 @@ public class ToDo1
 		this.user = user;
 	}
 	
-	@Column(name = "status" )
-	public String getStatus() 
+	@Column(name = "priority" )
+	public String getPriority()
 	{
-		return status;
+		return priority;
 	}
 	
-	public void setStatus(String status) 
+	public void setPriority(String priority)
 	{
-		this.status = status;
+		this.priority = priority;
 	}
+	
 	
 	@Column(name = "completiondate" )
 	public String getCompletiondate()
@@ -116,16 +121,18 @@ public class ToDo1
 		this.completiondate = completiondate;
 	}
 	
-	@Column(name = "priority" )
-	public String getPriority()
+	@Column(name = "status" )
+	public String getStatus() 
 	{
-		return priority;
+		return status;
 	}
 	
-	public void setPriority(String priority)
+	public void setStatus(String status) 
 	{
-		this.priority = priority;
+		this.status = status;
 	}
+	
+	
 	
 	/**
 	 * returns the name and description

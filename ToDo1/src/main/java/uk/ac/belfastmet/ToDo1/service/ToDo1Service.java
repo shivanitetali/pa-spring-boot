@@ -25,56 +25,65 @@ public class ToDo1Service
 	
 	private ArrayList<ToDo1> homeToDo1;
 	private ArrayList<ToDo1> completedToDo1;
-	
+	private ArrayList<ToDo1> todoList;
+		
 	/**
-	 * @return to-do list in home.html
+	 * @return to-do list in home.html page
 	 */
 	public ArrayList<ToDo1> getHomeToDo1()
 	{
 		this.homeToDo1 = new ArrayList<ToDo1>();
-		
-		this.homeToDo1.add(new ToDo1( "Shivani","Cooking","Work in progress","Morning","High"));
-		this.homeToDo1.add(new ToDo1( "Srini","Cleaning","Work in progress","Afternoon","Medium"));
-		this.homeToDo1.add(new ToDo1( "Aarush","Sorting","Work in progress","Evening","Low"));
-		this.homeToDo1.add(new ToDo1( "Aayush","Painting","Work in progress","Night","Low"));
+// 		commented out below to replace iterables from mysql instead		
+//		this.homeToDo1.add(new ToDo1( "Shivani","Cooking","Work in progress","Morning","High"));
+//		this.homeToDo1.add(new ToDo1( "Srini","Cleaning","Work in progress","Afternoon","Medium"));
+//		this.homeToDo1.add(new ToDo1( "Aarush","Sorting","Work in progress","Evening","Low"));
+//		this.homeToDo1.add(new ToDo1( "Aayush","Painting","Work in progress","Night","Low"));
 		
 		return this.homeToDo1;
 	}
-	
+//	
 	/** 
-	 * @return completed list in completed.html
+	 * @return completed list in completed.html page
 	 */
 	public ArrayList<ToDo1> getCompletedToDo1()
 	{
 	
 		this.completedToDo1 = new ArrayList<ToDo1>();
-		
-		this.completedToDo1.add(new ToDo1( "Shivani","Cooking","Completed","Morning","High"));
-		this.completedToDo1.add(new ToDo1( "Srini","Cleaning","Completed","Afternoon","Medium"));
-		this.completedToDo1.add(new ToDo1( "Aarush","Sorting","Completed","Evening","Low"));
-		this.completedToDo1.add(new ToDo1( "Aayush","Painting","Completed","Night","Low"));
+// 		commented out below to replace iterables from mysql instead			
+//		this.completedToDo1.add(new ToDo1( "Shivani","Cooking","Completed","Morning","High"));
+//		this.completedToDo1.add(new ToDo1( "Srini","Cleaning","Completed","Afternoon","Medium"));
+//		this.completedToDo1.add(new ToDo1( "Aarush","Sorting","Completed","Evening","Low"));
+//		this.completedToDo1.add(new ToDo1( "Aayush","Painting","Completed","Night","Low"));
 		
 		return this.completedToDo1;
 	}
 	
 	/**
-	 * @return 
-	 * @return iterables list from the task table in mysql
+	 * connects to todo database and shows up the iterables list from the task table 
 	 */
-	public TaskRepository getNumberOfTask()
+	
+	//public void getNumberOfTask()
+	public ArrayList<ToDo1> getDBTasks()
 	{
-		Iterable <ToDo1> task = taskRepository.findAll();
-		Iterator <ToDo1> iterator = task.iterator();
+		logger.info("# of tasks {}", taskRepository.count());
+		
+		Iterable <ToDo1> todo1Tasks = taskRepository.findAll();
+		Iterator <ToDo1> iterator = todo1Tasks.iterator();
+		ArrayList<ToDo1> todoList = new ArrayList<ToDo1>();
 		while (iterator.hasNext())
 		{
 			//gives the info in the console of the iterable list from the task table in mysql
 			logger.info("{}", iterator.next().toString());
-			logger.info("# of tasks {}", taskRepository.count());	
+			//logger.info("# of tasks {}", taskRepository.count());
+			todoList.add(iterator.next());
 		}
+			
+		return todoList;
 		
-		return this.taskRepository;
 		
 	}
+	
+	
 	
 	
 }
