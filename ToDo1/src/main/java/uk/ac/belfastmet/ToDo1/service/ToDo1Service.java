@@ -84,8 +84,8 @@ public class ToDo1Service
 	{
 		logger.info("# of tasks {}", taskRepository.count());
 		
-		Iterable <ToDo1> todo1Tasks = taskRepository.findAll();
-		Iterator <ToDo1> iterator = todo1Tasks.iterator();
+		Iterable <ToDo1> todoTasks = taskRepository.findAll();
+		Iterator <ToDo1> iterator = todoTasks.iterator();
 		ArrayList<ToDo1> todoList = new ArrayList<ToDo1>();
 		while (iterator.hasNext())
 		{
@@ -93,7 +93,7 @@ public class ToDo1Service
 			//logger.info("{}", iterator.next().toString());
 			//logger.info("# of tasks {}", taskRepository.count());
 			todoList.add(iterator.next());
-						
+			
 		}
 					
 		return todoList;

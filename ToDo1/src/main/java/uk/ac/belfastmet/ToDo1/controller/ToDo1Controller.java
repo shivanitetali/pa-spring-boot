@@ -11,6 +11,7 @@ import uk.ac.belfastmet.ToDo1.domain.ToDo1;
 import uk.ac.belfastmet.ToDo1.repository.TaskRepository;
 import uk.ac.belfastmet.ToDo1.service.ToDo1Service;
 
+import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,6 +51,9 @@ public class ToDo1Controller
 		todo1Service.getNumberOfTask();
 		todo1Service.getDBTasks();
 		
+		ArrayList<ToDo1> tasks = todo1Service.getDBTasks();
+		model.addAttribute("tasks", tasks);
+		
 		return "home";
 	}
 	
@@ -64,13 +68,15 @@ public class ToDo1Controller
 		logger.info(todo1.toString());
 		
 		//@Autowired replaces the below line	
-		ToDo1Service todo1Service = new ToDo1Service();
+		//ToDo1Service todo1Service = new ToDo1Service();
 		model.addAttribute("pageTitle", "Completed");
 		model.addAttribute("todo1", todo1Service.getCompletedToDo1());
 		
 		//will give the message typed here on the website
 		model.addAttribute("message", "Completed Tasks");
 		
+		ArrayList<ToDo1> tasks = todo1Service.getDBTasks();
+		model.addAttribute("title", tasks);
 		
 		
 		return "completed";
