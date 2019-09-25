@@ -8,11 +8,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import jdk.internal.org.jline.utils.ShutdownHooks.Task;
 import uk.ac.belfastmet.ToDo1.domain.ToDo1;
 import uk.ac.belfastmet.ToDo1.repository.TaskRepository;
  
+/**
+ * Class holding all properties, make objects of this 
+ * @author tet19171871
+ *
+ */
 @Service
 public class ToDo1Service
 {
@@ -24,8 +27,7 @@ public class ToDo1Service
 	private ArrayList<ToDo1> completedToDo1;
 	
 	/**
-	 * 
-	 * @return to-do list in home page
+	 * @return to-do list in home.html
 	 */
 	public ArrayList<ToDo1> getHomeToDo1()
 	{
@@ -39,12 +41,12 @@ public class ToDo1Service
 		return this.homeToDo1;
 	}
 	
-	/**
-	 * 
-	 * @return completed list in completed page
+	/** 
+	 * @return completed list in completed.html
 	 */
 	public ArrayList<ToDo1> getCompletedToDo1()
 	{
+	
 		this.completedToDo1 = new ArrayList<ToDo1>();
 		
 		this.completedToDo1.add(new ToDo1( "Shivani","Cooking","Completed","Morning","High"));
@@ -55,15 +57,24 @@ public class ToDo1Service
 		return this.completedToDo1;
 	}
 	
-	public void getNumberOfTask()
+	/**
+	 * @return 
+	 * @return iterables list from the task table in mysql
+	 */
+	public TaskRepository getNumberOfTask()
 	{
 		Iterable <ToDo1> task = taskRepository.findAll();
 		Iterator <ToDo1> iterator = task.iterator();
 		while (iterator.hasNext())
 		{
+			//gives the info in the console of the iterable list from the task table in mysql
 			logger.info("{}", iterator.next().toString());
 			logger.info("# of tasks {}", taskRepository.count());	
 		}
-			
+		
+		return this.taskRepository;
+		
 	}
+	
+	
 }

@@ -34,11 +34,25 @@
 
 
 <div class="container">
-  <h2>Button Tags</h2>
-  <a href="#" class="btn btn-info" role="button">Link Button</a>
-  <button type="button" class="btn btn-info">Button</button>
-  <input type="button" class="btn btn-info" value="Input Button">
-  <input type="submit" class="btn btn-info" value="Submit Button">
+  <!-- contents inside the mysql task table -->
+<table class = "table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>User</th>
+			<th>Priority</th>
+		</tr>
+	</thead>
+<tbody>
+	<tr th:each="task:${task}">
+		<td th:text="${task.name}"></td>
+		<td th:text="${task.description}"></td>
+		<td th:text="${task.user}"></td>
+		<td th:text="${task.priority}"></td>
+				
+</tbody>
+</table>
 </div>
 
 
