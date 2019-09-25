@@ -48,9 +48,10 @@ public class ToDo1Controller
 		//message typed here will be on the website
 		model.addAttribute("message", "To-Do Tasks");
 		
-		todo1Service.getNumberOfTask();
+		//todo1Service.getNumberOfTask();
 		todo1Service.getDBTasks();
 		
+		//calling the DB service to populate on the website		
 		ArrayList<ToDo1> tasks = todo1Service.getDBTasks();
 		model.addAttribute("tasks", tasks);
 		
@@ -75,6 +76,7 @@ public class ToDo1Controller
 		//will give the message typed here on the website
 		model.addAttribute("message", "Completed Tasks");
 		
+		//calling the DB service to populate on the website	
 		ArrayList<ToDo1> tasks = todo1Service.getDBTasks();
 		model.addAttribute("title", tasks);
 		

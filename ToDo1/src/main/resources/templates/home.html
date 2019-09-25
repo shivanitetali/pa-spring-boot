@@ -52,6 +52,7 @@
 <table class = "table table-striped">
 	<thead>
 		<tr>
+			<!-- modified the coloumn names to match mysql task table -->
 			<th>Name</th>
 			<th>Description</th>
 			<th>User</th>
@@ -61,6 +62,7 @@
 		</tr>
 	</thead>
 <tbody>
+	<!-- changed the name from todo1 to tasks so that the data on the website is populated with the list in mysql -->
 	<tr th:each="todo1:${tasks}">
 		<td th:text="${todo1.name}"></td>
 		<td th:text="${todo1.description}"></td>
