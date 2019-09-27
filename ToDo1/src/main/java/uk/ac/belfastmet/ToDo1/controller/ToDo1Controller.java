@@ -19,13 +19,14 @@ import org.slf4j.LoggerFactory;
 @RequestMapping
 @Controller
 
+//this class calls  the Service class to populate the info on the website ,takes the info from the DB
 public class ToDo1Controller
 
 {
 	@Autowired
 	private ToDo1Service  todo1Service;
 	
-	//returns the logger info
+	//returns the logger info on the console
 	Logger logger = LoggerFactory.getLogger(ToDo1Controller.class);
 	ToDo1 todo1 = new ToDo1();
 	
@@ -45,13 +46,13 @@ public class ToDo1Controller
 		model.addAttribute("pageTitle", "Home");
 		model.addAttribute("todo1", todo1Service.getHomeToDo1());
 			
-		//message typed here will be on the website
+		//message typed here will be on the website from the home.html
 		model.addAttribute("message", "To-Do Tasks");
 		
-		//todo1Service.getNumberOfTask();
+		todo1Service.getNumberOfTask();
 		todo1Service.getDBTasks();
 		
-		//calling the DB service to populate on the website		
+		//calling the DB service to populate on the website	from the home.html	
 		ArrayList<ToDo1> tasks = todo1Service.getDBTasks();
 		model.addAttribute("tasks", tasks);
 		
@@ -73,10 +74,13 @@ public class ToDo1Controller
 		model.addAttribute("pageTitle", "Completed");
 		model.addAttribute("todo1", todo1Service.getCompletedToDo1());
 		
-		//will give the message typed here on the website
+		//will give the message typed here on the website from the completed.html
 		model.addAttribute("message", "Completed Tasks");
 		
-		//calling the DB service to populate on the website	
+		todo1Service.getNumberOfTask();
+		todo1Service.getDBTasks();
+		
+		//calling the DB service to populate on the website	in the completed page
 		ArrayList<ToDo1> tasks = todo1Service.getDBTasks();
 		model.addAttribute("title", tasks);
 		

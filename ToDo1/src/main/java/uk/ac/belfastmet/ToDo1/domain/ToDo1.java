@@ -50,6 +50,15 @@ public class ToDo1
 		super();
 	}
 	
+	/**
+	 * below parameters returns String
+	 * @param name
+	 * @param description
+	 * @param user
+	 * @param priority
+	 * @param completiondate
+	 * @param status
+	 */
 	//public ToDo1(String name, String description, String status, String completiondate, String priority) 
 	public ToDo1(String name, String description, String user, String priority, String completiondate,String status) 
 	{
